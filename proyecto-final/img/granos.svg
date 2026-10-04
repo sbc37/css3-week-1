@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260">
+  <defs>
+    <g id="g"><ellipse rx="26" ry="17" fill="#5a3520"/><path d="M-22 0 Q0 -8 22 0" stroke="#2b170c" stroke-width="4" fill="none"/></g>
+  </defs>
+  <rect width="400" height="260" fill="#f3e4cf"/>
+  <use href="#g" transform="translate(70 60) rotate(20)"/>
+  <use href="#g" transform="translate(160 100) rotate(-30)"/>
+  <use href="#g" transform="translate(260 55) rotate(60)"/>
+  <use href="#g" transform="translate(330 140) rotate(10)"/>
+  <use href="#g" transform="translate(90 180) rotate(-60)"/>
+  <use href="#g" transform="translate(210 200) rotate(35)"/>
+  <use href="#g" transform="translate(300 220) rotate(-15)"/>
+  <use href="#g" transform="translate(40 120) rotate(80)"/>
+</svg>

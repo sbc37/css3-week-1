@@ -1,0 +1,289 @@
+/* =====================================================
+   Proyecto final: Ruta del Café
+   Hoja de estilo única para las tres páginas
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #2b1d14;
+  background-color: #fbf6ef;
+}
+
+/* ---------- Paso 3: enlace "Saltar al contenido principal" ----------
+   Usa position para sacarlo de la pantalla y :focus para mostrarlo */
+.saltar {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 1000;
+  padding: 10px 18px;
+  background-color: #f2c14e;
+  color: #2b1d14;
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+}
+
+.saltar:focus {
+  top: 0;
+  outline: 3px solid #2b1d14;
+}
+
+/* ---------- Encabezado ---------- */
+header {
+  background-color: #3b2314;
+  color: #ffffff;
+  padding: 24px 0 0;
+  text-align: center;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* El logo no lleva el estilo de marco de las demás imágenes */
+.marca img {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.lema {
+  margin: 4px 0 18px;
+  color: #f6dfb8;
+  font-style: italic;
+}
+
+/* ---------- Paso 4 y 7: navegación con flex ---------- */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 0;
+  list-style: none;
+  background-color: #5a3520;
+  border-top: 3px solid #f2c14e;
+}
+
+nav a {
+  display: block;
+  padding: 8px 20px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Paso 8: hover con transición en la navegación */
+nav a:hover,
+nav a:focus {
+  background-color: #f2c14e;
+  color: #2b1d14;
+  transform: translateY(-3px);
+}
+
+/* Página actual resaltada */
+nav a[aria-current="page"] {
+  background-color: #fbf6ef;
+  color: #3b2314;
+}
+
+/* ---------- Contenido principal ---------- */
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #5a3520;
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+h3 {
+  color: #3b2314;
+  margin: 12px 0 6px;
+}
+
+.intro {
+  font-size: 1.1rem;
+  max-width: 750px;
+}
+
+/* ---------- Paso 5: todas las imágenes con el modelo de caja ---------- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 8px;
+  border: 3px solid #8a4b1f;
+  border-radius: 14px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #5a3520;
+}
+
+/* Imagen principal de la página de inicio */
+.portada img {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* ---------- Paso 6: grid con dos columnas ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.tarjeta {
+  padding: 18px;
+  background-color: #ffffff;
+  border: 1px solid #e3d3bf;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(59, 35, 20, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Paso 8: las tarjetas se elevan al pasar el mouse */
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(59, 35, 20, 0.18);
+}
+
+/* ---------- Paso 7: galería con flex ---------- */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 28px;
+}
+
+.galeria figure {
+  flex: 1 1 280px;
+  max-width: 320px;
+}
+
+.galeria img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Paso 8: la foto crece, gira un poco y cambia de color de borde */
+.galeria img:hover {
+  transform: scale(1.06) rotate(-2deg);
+  border-color: #f2c14e;
+  box-shadow: 0 14px 28px rgba(59, 35, 20, 0.3);
+}
+
+/* ---------- Paso 9: nth-child, un radio de borde diferente por imagen ---------- */
+.galeria figure:nth-child(1) img {
+  border-radius: 0;
+}
+
+.galeria figure:nth-child(2) img {
+  border-radius: 30px;
+}
+
+.galeria figure:nth-child(3) img {
+  border-radius: 50%;
+}
+
+.galeria figure:nth-child(4) img {
+  border-radius: 40px 0;
+}
+
+.galeria figure:nth-child(5) img {
+  border-radius: 0 40px;
+}
+
+.galeria figure:nth-child(6) img {
+  border-radius: 60px 60px 8px 8px;
+}
+
+/* ---------- Página de preparación ---------- */
+.pasos {
+  padding-left: 22px;
+}
+
+.pasos li {
+  margin-bottom: 10px;
+}
+
+/* nth-child también en la lista de pasos: los pares con fondo suave */
+.pasos li:nth-child(even) {
+  background-color: #f3e4cf;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+.dato {
+  margin-top: 32px;
+  padding: 18px 22px;
+  background-color: #3b2314;
+  color: #ffffff;
+  border-left: 8px solid #f2c14e;
+  border-radius: 10px;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  background-color: #3b2314;
+  color: #f6dfb8;
+  text-align: center;
+  padding: 20px 16px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Pantallas pequeñas: el grid pasa a una columna ---------- */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
